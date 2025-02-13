@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern E-commerce</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="bg-white">
+<nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary transition-colors">Shop</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary transition-colors">Categories</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary transition-colors">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative">
+<input type="text" placeholder="Search products..." class="pl-10 pr-4 py-2 w-64 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm">
+<i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+</div>
+<div class="relative">
+<button class="w-10 h-10 flex items-center justify-center hover:text-primary transition-colors" onclick="toggleCart()">
+<i class="ri-shopping-cart-line text-xl"></i>
+<span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center hover:text-primary transition-colors">
+<i class="ri-user-line text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<section class="relative h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-10"></div>
+<img src="https://public.readdy.ai/ai/img_res/492c7be9093f8a5da7f4c98ec477b4d0.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Hero background">
+<div class="max-w-7xl mx-auto px-4 relative z-20">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold mb-6 leading-tight">Discover Modern Living Through Design</h1>
+<p class="text-lg text-gray-600 mb-8">Transform your space with our curated collection of contemporary furniture and decor. Experience the perfect blend of style and comfort.</p>
+<button class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition-colors hover-scale">Shop Now</button>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">Featured Categories</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="relative group overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/e5c5cdb25d54bdac025412a5a6f707b1.jpg" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Living Room">
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<div class="text-center">
+<h3 class="text-white text-xl font-bold mb-2">Living Room</h3>
+<button class="text-white border border-white px-6 py-2 rounded-button hover:bg-white hover:text-gray-900 transition-colors">Explore</button>
+</div>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/bc95b98c6d2253f59fc624b1aceb0a9a.jpg" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Bedroom">
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<div class="text-center">
+<h3 class="text-white text-xl font-bold mb-2">Bedroom</h3>
+<button class="text-white border border-white px-6 py-2 rounded-button hover:bg-white hover:text-gray-900 transition-colors">Explore</button>
+</div>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/4172b2b17c4b9e74d84910a4c371bedb.jpg" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Kitchen">
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<div class="text-center">
+<h3 class="text-white text-xl font-bold mb-2">Kitchen</h3>
+<button class="text-white border border-white px-6 py-2 rounded-button hover:bg-white hover:text-gray-900 transition-colors">Explore</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex items-center justify-between mb-12">
+<h2 class="text-3xl font-bold">Featured Products</h2>
+<div class="flex space-x-2">
+<button class="px-4 py-2 rounded-full bg-primary text-white text-sm hover:bg-primary/90 transition-colors">All</button>
+<button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">New Arrivals</button>
+<button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">Best Sellers</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="product-card group relative">
+<div class="relative overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/00beb667999a819c3eb5dc862878b8fd.jpg" class="w-full h-64 object-cover" alt="Modern Armchair">
+<div class="quick-view absolute inset-0 bg-black/40 flex items-center justify-center">
+<button class="bg-white text-gray-900 px-6 py-2 rounded-button hover:bg-gray-100 transition-colors" onclick="addToCart('Modern Armchair', 599)">Quick View</button>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-lg font-medium">Modern Armchair</h3>
+<p class="text-gray-600">$599</p>
+</div>
+</div>
+<div class="product-card group relative">
+<div class="relative overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/95ce5c8ea71aed53e14499754bb589c8.jpg" class="w-full h-64 object-cover" alt="Dining Table">
+<div class="quick-view absolute inset-0 bg-black/40 flex items-center justify-center">
+<button class="bg-white text-gray-900 px-6 py-2 rounded-button hover:bg-gray-100 transition-colors" onclick="addToCart('Dining Table', 899)">Quick View</button>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-lg font-medium">Dining Table</h3>
+<p class="text-gray-600">$899</p>
+</div>
+</div>
+<div class="product-card group relative">
+<div class="relative overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/b07e42cd3726033c8c31e2fc917ab8cc.jpg" class="w-full h-64 object-cover" alt="Floor Lamp">
+<div class="quick-view absolute inset-0 bg-black/40 flex items-center justify-center">
+<button class="bg-white text-gray-900 px-6 py-2 rounded-button hover:bg-gray-100 transition-colors" onclick="addToCart('Floor Lamp', 299)">Quick View</button>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-lg font-medium">Floor Lamp</h3>
+<p class="text-gray-600">$299</p>
+</div>
+</div>
+<div class="product-card group relative">
+<div class="relative overflow-hidden rounded-lg">
+<img src="https://public.readdy.ai/ai/img_res/36f8d1bcf233c4171c11d8dd1c44d542.jpg" class="w-full h-64 object-cover" alt="Modern Sofa">
+<div class="quick-view absolute inset-0 bg-black/40 flex items-center justify-center">
+<button class="bg-white text-gray-900 px-6 py-2 rounded-button hover:bg-gray-100 transition-colors" onclick="addToCart('Modern Sofa', 1299)">Quick View</button>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-lg font-medium">Modern Sofa</h3>
+<p class="text-gray-600">$1,299</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl font-bold mb-6">Why Choose Us</h2>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full">
+<i class="ri-truck-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-2">Free Shipping</h3>
+<p class="text-gray-600">Free shipping on all orders over $500</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full">
+<i class="ri-shield-check-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-2">Quality Guarantee</h3>
+<p class="text-gray-600">All products are quality checked</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full">
+<i class="ri-customer-service-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-2">24/7 Support</h3>
+<p class="text-gray-600">Dedicated support team available</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://public.readdy.ai/ai/img_res/cd8d1d65fa6af45cf4821905a614540f.jpg" class="w-full rounded-lg shadow-lg" alt="Why Choose Us">
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"Exceptional quality and design. The furniture pieces I ordered exceeded my expectations. The customer service was outstanding throughout the entire process."</p>
+<div class="flex items-center">
+<div class="mr-4">
+<h4 class="font-medium">Emily Thompson</h4>
+<p class="text-sm text-gray-500">Interior Designer</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"The attention to detail and craftsmanship is remarkable. Every piece I've purchased has become a statement piece in my home. Highly recommended!"</p>
+<div class="flex items-center">
+<div class="mr-4">
+<h4 class="font-medium">Michael Anderson</h4>
+<p class="text-sm text-gray-500">Architect</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"Fast shipping and excellent packaging. The furniture arrived in perfect condition and was easy to assemble. The quality is outstanding for the price."</p>
+<div class="flex items-center">
+<div class="mr-4">
+<h4 class="font-medium">Sarah Martinez</h4>
+<p class="text-sm text-gray-500">Home Stylist</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<h3 class="text-xl font-['Pacifico'] mb-6">logo</h3>
+<p class="text-gray-400">Transform your space with our curated collection of modern furniture and decor.</p>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-6">Categories</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Living Room</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Bedroom</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kitchen</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Office</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-6">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
+<form class="flex">
+<input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-button bg-gray-800 border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+<button type="submit" class="px-6 py-2 bg-primary text-white rounded-r-button hover:bg-primary/90 transition-colors whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">&copy; 2025 logo. All rights reserved. | Designed by Satyam Raj Mahakul</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-pinterest-fill text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div class="toast" id="toast">
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 text-xl mr-2"></i>
+<span id="toastMessage"></span>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
